@@ -2,10 +2,14 @@
     function MainCtrl(Room, $uibModal) {
         this.chatRoomArray = Room.all;
         
-        this.newRoom = function() {
+        this.addRoom = function() {
             $uibModal.open({
                 templateUrl: '/templates/modal.html',
-                controller: 'ModalCtrl as modal'
+                size: 'sm',
+                controller: 'ModalCtrl',
+                controllerAs : 'modal'
+                
+
                 
             });
         }      
