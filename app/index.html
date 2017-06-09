@@ -25,19 +25,20 @@
      <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
 
     <!-- Firebase -->
-    <script src="https://www.gstatic.com/firebasejs/3.8.0/firebase.js"></script>
-    <script>
-      // Initialize Firebase
-      var config = {
-        apiKey: "AIzaSyCvqNSa_Vf8lN4MxKrwwzka7Iew6Ime3_g",
-        authDomain: "bloc-chat-2979c.firebaseapp.com",
-        databaseURL: "https://bloc-chat-2979c.firebaseio.com",
-        projectId: "bloc-chat-2979c",
-        storageBucket: "bloc-chat-2979c.appspot.com",
-        messagingSenderId: "21376306173"
-      };
-      firebase.initializeApp(config);
-    </script>
+
+<script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCvqNSa_Vf8lN4MxKrwwzka7Iew6Ime3_g",
+    authDomain: "bloc-chat-2979c.firebaseapp.com",
+    databaseURL: "https://bloc-chat-2979c.firebaseio.com",
+    projectId: "bloc-chat-2979c",
+    storageBucket: "bloc-chat-2979c.appspot.com",
+    messagingSenderId: "21376306173"
+  };
+  firebase.initializeApp(config);
+</script>
     
     <script src="/scripts/app.js"></script>
     <script src="/scripts/services/Room.js"></script>

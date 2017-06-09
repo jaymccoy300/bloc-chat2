@@ -1,12 +1,12 @@
 <div class="navbar">
     <h1 class="hero-title">Bloc Chat</h1>
     <span class="new-room-button" type="button" ng-click="main.addRoom()">New Room</span>
-        <div ng-repeat="item in main.chatRoomArray">
-            <p class = "room-name" ng-click="main.setCurrentRoom(room)">{{item.$value}}</p>
-        </div>
+        <div ng-repeat="room in main.rooms">
+            <p class="room-name" ng-click="main.setCurrentRoom(room)">{{ room.name }}</p>
+    </div>
 </div>
 <div class = "chat-section">
-    <h3>{{main.currentRoom.$id}}</h3>
+    <h3>{{main.currentRoom.name}}</h3>
     <div class="messages" ng-repeat="message in main.messages">
         <div class="username">{{ message.username }}</div>
         <div class="timestamp">{{ message.sentAt }}</div>

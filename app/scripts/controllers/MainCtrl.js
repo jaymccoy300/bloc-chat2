@@ -1,10 +1,11 @@
 (function() {
     function MainCtrl(Room, Message, $uibModal) {
-        this.chatRoomArray = Room.all;
-        this.currentRoom = null;
+        var main = this;
+        main.rooms = Room.all;
+        main.currentRoom = null;
         
         
-        this.addRoom = function() {
+        main.addRoom = function() {
             $uibModal.open({
                 templateUrl: '/templates/modal.html',
                 size: 'sm',
@@ -14,10 +15,10 @@
             });
         }
         
-        this.setCurrentRoom = function(room) {
-            this.currentRoom = room;
-            this.messages = Message.getByRoomId(this.currentRoom.$id);
-            console.log(this.messages);
+        main.setCurrentRoom = function(room) {
+      //      this.currentRoom = room;
+            main.messages = Message.getByRoomId(room.$id);
+      //      console.log(this.messages);
         }
     }
 
