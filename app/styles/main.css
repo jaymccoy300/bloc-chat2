@@ -32,5 +32,46 @@
 }
 
 .messages {
+    position: fixed;
+    top: 0px;
+    left: 300px;
+    width: 80%;
+    height: 100%;
+    background-color: white;
+    z-index: 1;
+    overflow: scroll;
     text-align: center;
+}
+
+.messages-body {
+    padding-right: 50px;
+}
+
+.messages-body .username {
+    font-weight: bold;
+    float: left;
+}
+
+.messages-body .timestamp {
+    text-align: right;
+    padding-right: 200px;
+}
+
+.messages-body .username .timestamp {
+    display: inline-block;
+}
+
+.messages-body .user-message {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.message-field {
+    bottom: 0;
+    padding-bottom: 5px;
+    position: fixed;
+}
+
+.message-box {
+    width: 800px;
 }
