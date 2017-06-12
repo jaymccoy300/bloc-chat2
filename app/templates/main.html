@@ -5,9 +5,11 @@
             <p class="room-name" ng-click="main.setCurrentRoom(room)">{{ room.name }}</p>
     </div>
 </div>
-<div class = "chat-section">
-    <h3>{{main.currentRoom.name}}</h3>
-    <div class="messages" ng-repeat="message in main.messages">
+<div class = "messages">
+    <div class="messages-header">
+        <h3>{{main.currentRoom.name}}</h3>
+    </div>
+    <div class="messages-body" ng-repeat="message in main.messages">
         <div class="username">{{ message.username }}</div>
         <div class="timestamp">{{ message.sentAt }}</div>
         <div class="user-message">{{ message.content }}</div>

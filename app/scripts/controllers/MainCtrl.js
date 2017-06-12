@@ -16,7 +16,6 @@
         }
         
         main.setCurrentRoom = function(room) {
-      //      this.currentRoom = room;
             main.messages = Message.getByRoomId(room.$id);
       //      console.log(this.messages);
         }
