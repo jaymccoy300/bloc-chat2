@@ -9,8 +9,9 @@
         return $firebaseArray(ref.orderByChild('roomId').equalTo(roomId));
     }
     
-    Message.send = function(newMessage) {
-        messages.$add(newMessage);
+    Message.send = function(newMessage, roomId) {
+        console.log(roomId);
+        messages.$add({newMessage:newMessage, roomId:roomId});
         newMessage.sentAt = firebase.database.ServerValue.timeStamp;
     }
     

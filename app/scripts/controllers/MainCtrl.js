@@ -17,12 +17,13 @@
         
         main.setCurrentRoom = function(room) {
             main.messages = Message.getByRoomId(room.$id);
+            main.currentRoomId = room.$id;
         }
         main.sendMessage = function() {
             console.log(main.newMessage);
-            main.newMessage.roomId = main.currentRoom.$id;
+            main.newMessage.roomId = main.currentRoom;
             main.newMessage.username = main.currentUser;
-            Message.send(main.newMessage);
+            Message.send(main.newMessage,main.currentRoomId);
         }
     }
 
