@@ -1,18 +1,29 @@
-<div class="navbar">
-    <h1 class="hero-title">Bloc Chat</h1>
-    <span class="new-room-button" type="button" ng-click="main.addRoom()">New Room</span>
-        <div ng-repeat="room in main.rooms">
-            <p class="room-name" ng-click="main.setCurrentRoom(room)">{{ room.name }}</p>
-    </div>
-</div>
-<div class = "messages">
-    <div class="messages-header">
-        <h3>{{main.currentRoom.name}}</h3>
-    </div>
-    <div class="messages-body" ng-repeat="message in main.messages">
-        <div class="username">{{ message.username }}</div>
-        <div class="timestamp">{{ message.sentAt }}</div>
-        <div class="user-message">{{ message.content }}</div>
+
+<div class="wrap">
+    <div class="nav-bar">
+
+        <div class="hero-title">Bloc Chat</div>
+        <button class="new-room-button" type="button" ng-click="main.openNewRoomModal()">New room</button>
+
+        <ul class="rooms-list">
+            <li class="room-name" ng-repeat="room in main.chatRoomArray" ng-click="main.setCurrentRoom(room)">
+                  {{room.$value}}
+            </li>
+        </ul>
+
     </div>
 
+    <div class="room-view" >
+        <span class="room-title">{{main.currentRoomTitle}}</span>
+     <ul class="messages-list">
+          <li class="message" ng-repeat="message in main.messageArray track by $index">
+              <span class="message-username">{{message.user}}</span><br>
+              <span class="message-content">{{message.content}}</span><span class="message-time">{{message.sentAt}}</span>
+          </li>
+      </ul>
+            <form class="message-form" ng-submit="main.sendMessage()">
+          <input type="text" class="message-input" placeholder="Write your message here..." ng-model="main.message">
+          <input type="submit" class="button-sendmessage" value="Send">
+      </form>
+    </div>
 </div>
